@@ -1,0 +1,502 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Brand P API",
+        "_postman_id": "59c5f585-b117-4e8e-a56c-a55078b41d67",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "CRM",
+            "description": "",
+            "item": [
+                {
+                    "name": "List Follow ups",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "www.gyral.link\/erpnew\/public",
+                            "path": "connector\/api\/crm\/follow-ups",
+                            "query": [
+                                {
+                                    "key": "start_date",
+                                    "value": "2020-12-16",
+                                    "description": "format: Y-m-d (Ex: 2020-12-16)",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "end_date",
+                                    "value": "2020-12-16",
+                                    "description": "format: Y-m-d (Ex: 2020-12-16)",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "status",
+                                    "value": "pariatur",
+                                    "description": "filter the result through status, get status from getFollowUpResources->statuses",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "follow_up_type",
+                                    "value": "reiciendis",
+                                    "description": "filter the result through follow_up_type, get follow_up_type from getFollowUpResources->follow_up_types",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "order_by",
+                                    "value": "start_datetime",
+                                    "description": "Column name to sort the result, Column: start_datetime",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "direction",
+                                    "value": "desc",
+                                    "description": "Direction to sort the result, Required if using 'order_by', direction: desc, asc",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "Total records per page. default: 10, Set -1 for no pagination",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Add follow up",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "www.gyral.link\/erpnew\/public",
+                            "path": "connector\/api\/crm\/follow-ups",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"Meeting with client\",\n    \"contact_id\": 2,\n    \"description\": \"laboriosam\",\n    \"schedule_type\": \"molestiae\",\n    \"user_id\": \"[2,3,5]\",\n    \"notify_before\": 5,\n    \"notify_type\": \"minute\",\n    \"status\": \"open\",\n    \"notify_via\": \"['sms' => 0 ,'mail' => 1]\",\n    \"start_datetime\": \"2021-01-06 13:05:00\",\n    \"end_datetime\": \"2021-01-06 13:05:00\",\n    \"followup_additional_info\": \"['call duration' => '1 hour']\",\n    \"allow_notification\": true\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get the specified followup",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "www.gyral.link\/erpnew\/public",
+                            "path": "connector\/api\/crm\/follow-ups\/:follow_up",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "follow_up",
+                                    "key": "follow_up",
+                                    "value": "1%2C2",
+                                    "description": "comma separated ids of the follow_ups"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update follow up",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "www.gyral.link\/erpnew\/public",
+                            "path": "connector\/api\/crm\/follow-ups\/:follow_up",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "follow_up",
+                                    "key": "follow_up",
+                                    "value": "20",
+                                    "description": "id of the follow up to be updated"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"Meeting with client\",\n    \"contact_id\": 2,\n    \"description\": \"mollitia\",\n    \"schedule_type\": \"voluptatem\",\n    \"user_id\": \"[2,3,5]\",\n    \"notify_before\": 5,\n    \"notify_type\": \"minute\",\n    \"status\": \"open\",\n    \"notify_via\": \"['sms' => 0 ,'mail' => 1]\",\n    \"followup_additional_info\": \"['call duration' => '1 hour']\",\n    \"start_datetime\": \"2021-01-06 13:05:00\",\n    \"end_datetime\": \"2021-01-06 13:05:00\",\n    \"allow_notification\": true\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get follow up resources",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "www.gyral.link\/erpnew\/public",
+                            "path": "connector\/api\/crm\/follow-up-resources",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "List lead",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "www.gyral.link\/erpnew\/public",
+                            "path": "connector\/api\/crm\/leads",
+                            "query": [
+                                {
+                                    "key": "assigned_to",
+                                    "value": "1%2C2%2C3",
+                                    "description": "comma separated ids of users to whom lead is assigned (Ex: 1,2,3)",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "name",
+                                    "value": "excepturi",
+                                    "description": "Search term for lead name",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "biz_name",
+                                    "value": "eveniet",
+                                    "description": "Search term for lead's business name",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "mobile_num",
+                                    "value": "20",
+                                    "description": "Search term for lead's mobile number",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "contact_id",
+                                    "value": "facilis",
+                                    "description": "Search term for lead's contact_id. Ex(CO0005)",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "order_by",
+                                    "value": "repellat",
+                                    "description": "Column name to sort the result, Column: name, supplier_business_name",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "direction",
+                                    "value": "desc",
+                                    "description": "Direction to sort the result, Required if using 'order_by', direction: desc, asc",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "Total records per page. default: 10, Set -1 for no pagination",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Save Call Logs",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "www.gyral.link\/erpnew\/public",
+                            "path": "connector\/api\/crm\/call-logs",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"call_logs\": [\n        {\n            \"mobile_number\": \"totam\",\n            \"mobile_name\": \"esse\",\n            \"call_type\": \"call\",\n            \"start_time\": \"mollitia\",\n            \"end_time\": \"aut\",\n            \"duration\": \"et\"\n        }\n    ]\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Field Force",
+            "description": "",
+            "item": [
+                {
+                    "name": "List visits",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "www.gyral.link\/erpnew\/public",
+                            "path": "connector\/api\/field-force",
+                            "query": [
+                                {
+                                    "key": "contact_id",
+                                    "value": "ut",
+                                    "description": "id of the contact",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "assigned_to",
+                                    "value": "aut",
+                                    "description": "id of the assigned user",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "status",
+                                    "value": "dolorem",
+                                    "description": "status of the visit (assigned, finished)",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "start_date",
+                                    "value": "2018-06-25",
+                                    "description": "Start date filter for visit on format:Y-m-d",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "end_date",
+                                    "value": "2018-06-25",
+                                    "description": "End date filter for visit on format:Y-m-d",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "15",
+                                    "description": "Total records per page. default: 10, Set -1 for no pagination",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "order_by_date",
+                                    "value": "desc",
+                                    "description": "Sort visit by visit on date ('asc', 'desc')",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Create Visit",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "www.gyral.link\/erpnew\/public",
+                            "path": "connector\/api\/field-force\/create",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"contact_id\": 3,\n    \"visit_to\": \"magni\",\n    \"visit_address\": \"temporibus\",\n    \"assigned_to\": 4,\n    \"visit_on\": \"2021-12-28 17:23:00\",\n    \"visit_for\": \"laboriosam\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update Visit status",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "www.gyral.link\/erpnew\/public",
+                            "path": "connector\/api\/field-force\/update-visit-status\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "17",
+                                    "description": "id of the visit to be updated"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": \"finished\",\n    \"reason_to_not_meet_contact\": \"sed\",\n    \"visited_on\": \"2021-12-28 17:23:00\",\n    \"visited_address\": \"Radhanath Mullick Ln, Tiretta Bazaar, Bow Bazaar, Kolkata, West Bengal, 700 073, India\",\n    \"latitude\": \"41.40338\",\n    \"longitude\": \"2.17403\",\n    \"comments\": \"vitae\",\n    \"photo\": \"sint\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

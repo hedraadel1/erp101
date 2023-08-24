@@ -1,0 +1,130 @@
+// {
+//     "workbench.colorCustomizations": {
+//         "activityBar.activeBackground": "#fa1b49",
+//         "activityBar.background": "#fa1b49",
+//         "activityBar.foreground": "#e7e7e7",
+//         "activityBar.inactiveForeground": "#e7e7e799",
+//         "activityBarBadge.background": "#155e02",
+//         "activityBarBadge.foreground": "#e7e7e7",
+//         "commandCenter.border": "#e7e7e799",
+//         "sash.hoverBorder": "#fa1b49",
+//         "statusBar.background": "#dd0531",
+//         "statusBar.foreground": "#e7e7e7",
+//         "statusBarItem.hoverBackground": "#fa1b49",
+//         "statusBarItem.remoteBackground": "#dd0531",
+//         "statusBarItem.remoteForeground": "#e7e7e7",
+//         "titleBar.activeBackground": "#dd0531",
+//         "titleBar.activeForeground": "#e7e7e7",
+//         "titleBar.inactiveBackground": "#dd053199",
+//         "titleBar.inactiveForeground": "#e7e7e799"
+//     },
+//     "peacock.remoteColor": "#dd0531"
+// }
+// Abanoub's format
+{
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+  "editor.guides.bracketPairs": true,
+  "telemetry.telemetryLevel": "off",
+  "security.workspace.trust.startupPrompt": "always",
+  "editor.accessibilitySupport": "off",
+  "liveServer.settings.CustomBrowser": "chromium",
+  "editor.fontFamily": "'Consolas', 'Consolas Italic', 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "tabnine.experimentalAutoImports": true,
+  "window.commandCenter": true,
+  "window.titleBarStyle": "custom",
+  "workbench.editor.enablePreview": false,
+  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+  "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+  "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          //following will be in italic (=FlottFlott)
+          "comment",
+          "entity.name.type.class", //class names
+          "keyword", //import, export, return…
+          "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js", //class keyword
+          "variable",
+          "string",
+          "array",
+          "int",
+          "number",
+          "enum",
+          "accessSpecifiers",
+          "object",
+          "name",
+          "scope",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics)
+          "invalid",
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "gitlens.advanced.messages": {
+    "suppressGitDisabledWarning": true,
+    "suppressGitMissingWarning": true
+  },
+  "editor.detectIndentation": false,
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "editor.tabSize": 2,
+  "php-cs-fixer.lastDownload": 1677415889161,
+  "[php]": {
+    "editor.defaultFormatter": "junstyle.php-cs-fixer"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "files.exclude": {
+    "**/.gitignore": true,
+    "**/build": true,
+    "**/node_modules": true
+  },
+  "files.associations": {
+    "*.ts": "typescript",
+    "*.tsx": "typescriptreact",
+    "*.js": "javascript"
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "window.zoomLevel": 0,
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "One Dark Vivid",
+  "oneDark.bold": true,
+  "workbench.preferredDarkColorTheme": "One Dark Vivid",
+  "oneDark.italic": false,
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.9,
+  "editor.suggestFontSize": 14,
+  "search.useGlobalIgnoreFiles": true,
+  "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
+  "files.autoSave": "afterDelay"
+}

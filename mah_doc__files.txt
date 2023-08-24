@@ -1,0 +1,47 @@
+
+task-3
+
+#-resources\views\purchase\partials\purchase_entry_row.blade.php  
+
+#-public\js\purchase.js
+
+#-resources\views\purchase\create.blade.php
+
+#-resources\views\purchase\partials\purchase_weight_modal.blade.php
+
+================================================================
+task-4
+
+#- app\installment.php   create model file
+
+#- public\js\pos.js
+#- public\js\home.js
+
+#-App\Http\sellposControll.php
+#-app\Http\Controllers\HomeController.php
+
+#-resources\views\sale_pos\partials\payment_row_form.blade.php *
+#-resources\views\home\installment_modal.blade.php *
+#-resources\views\home\index.blade.php *
+#- resources\views\sell\create.blade.php*
+
+#-routes\web.php
+#- config\constants
+#-resources\lang\ar\lang_v1.php
+#-resources\lang\en\lang_v1.php
+#-resources\lang\ar\sale.php
+#-resources\lang\en\sale.php
+
+====================================
+task-5
+#-app\Http\Controllers\ContactController.php
+#-
+#-resources\views\contact\ledger.blade.php
+#-resources\views\contact\partials\installment_modal.blade.php
+
+
+
+
+
+
+
