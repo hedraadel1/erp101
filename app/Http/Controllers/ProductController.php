@@ -1800,7 +1800,37 @@ class ProductController extends Controller
                 ['product_id' => $product->id]
             );
         } elseif ($request->input('submit_type') == 'save_n_add_another') {
-            return redirect()->action(
+            return redirect()
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            (
                 'ProductController@create'
             )->with('status', $output);
         }

@@ -53,8 +53,7 @@
 
               @include('install.partials.e_license')
               
-              <a href="{{route('install.details')}}" class="btn btn-primary pull-right">I Agree, Let's Go!</a>
-            </div>
+             </div>
           <!-- /.box-body -->
           </div>
 

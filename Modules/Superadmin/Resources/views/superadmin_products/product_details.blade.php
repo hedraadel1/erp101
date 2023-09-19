@@ -147,11 +147,7 @@
                                         class="btn Btn-Brand Btn-bx btn-info btn-block">تجربة لمدة يوم</a>
                                 </div>
                             @endif
-                            {{-- <div class="col-md-4">
-                                <a role="button" id="used_monthly" data-code="{{ $product->code }}"
-                                    data-amount="{{ $product->price_after_discount }}" data-id="{{ $product->id }}"
-                                    class="btn Btn-Brand Btn-bx btn-primary btn-block">شراء لمدة شهر</a>
-                            </div> --}}
+                       
                             <div
                                 class="{{ (empty($business_product) && optional($business_product)->paid_type != 'day') &&  !in_array($product->code, $product_cods) ? 'col-md-6' : 'col-md-12' }}">
                                 <a role="button" id="used_ultimate" data-code="{{ $product->code }}"

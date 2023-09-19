@@ -10,7 +10,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ action('\Modules\Superadmin\Http\Controllers\SuperadminProductController@hideProduct') }}"
+            {{-- <form action="{{ action('\Modules\Superadmin\Http\Controllers\SuperadminProductController@hideProduct') }}"
                 method="post">
                 @csrf
                 <div class="modal-body">
@@ -23,7 +23,7 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     {{-- <button type="submit" class="btn btn-info">عدم الظهور مرة
                     اخري</button> --}}
-            </form>
+            </form> --}}
         </div>
     </div>
 </div>

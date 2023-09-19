@@ -69,9 +69,10 @@ class PurchaseController extends Controller
       if (isset( package()->package_details)) {
         $package_details = package()->package_details;
         if(isset($package_details['sleep_page_time'])&& $package_details['sleep_page_time'] > 0){
-          sleep($package_details['sleep_page_time']);
+          sleep(0);
         }
       }
+      sleep(0);
         if (!auth()->user()->can('purchase.view') && !auth()->user()->can('purchase.create') && !auth()->user()->can('view_own_purchase')) {
             abort(403, 'Unauthorized action.');
         }

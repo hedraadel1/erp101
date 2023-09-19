@@ -388,9 +388,9 @@
             <button type="button" id="open_div_content" class=" " style="display: none" data-toggle="modal"
                 data-target="#content_model">
             </button>
-            <button type="button" id="open_div_brand_store" class=" " style="display: none"
+          <!--   <button type="button" id="open_div_brand_store" class=" " style="display: none"
                 data-toggle="modal" data-target="#brand_store_modal">
-            </button>
+            </button> -->
 
             <!-- Modal -->
             @if ($package)

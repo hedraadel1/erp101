@@ -22,109 +22,115 @@
 // }
 // Abanoub's format
 {
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
-  "editor.guides.bracketPairs": true,
-  "telemetry.telemetryLevel": "off",
-  "security.workspace.trust.startupPrompt": "always",
-  "editor.accessibilitySupport": "off",
-  "liveServer.settings.CustomBrowser": "chromium",
-  "editor.fontFamily": "'Consolas', 'Consolas Italic', 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "tabnine.experimentalAutoImports": true,
-  "window.commandCenter": true,
-  "window.titleBarStyle": "custom",
-  "workbench.editor.enablePreview": false,
-  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
-  "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
-  "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
-  "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": [
-          //following will be in italic (=FlottFlott)
-          "comment",
-          "entity.name.type.class", //class names
-          "keyword", //import, export, return…
-          "constant", //String, Number, Boolean…, this, super
-          "storage.modifier", //static keyword
-          "storage.type.class.js", //class keyword
-          "variable",
-          "string",
-          "array",
-          "int",
-          "number",
-          "enum",
-          "accessSpecifiers",
-          "object",
-          "name",
-          "scope",
-          "keyword.operator",
-          "constant.numeric.css",
-          "keyword.other.unit.px.css",
-          "constant.numeric.decimal.js",
-          "constant.numeric.json"
-        ],
-        "settings": {
-          "fontStyle": "italic"
-        }
-      },
-      {
-        "scope": [
-          //following will be excluded from italics (VSCode has some defaults for italics)
-          "invalid",
-        ],
-        "settings": {
-          "fontStyle": ""
-        }
-      }
-    ]
-  },
-  "gitlens.advanced.messages": {
-    "suppressGitDisabledWarning": true,
-    "suppressGitMissingWarning": true
-  },
-  "editor.detectIndentation": false,
-  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "editor.tabSize": 2,
-  "php-cs-fixer.lastDownload": 1677415889161,
-  "[php]": {
-    "editor.defaultFormatter": "junstyle.php-cs-fixer"
-  },
-  "workbench.iconTheme": "vscode-icons",
-  "files.exclude": {
-    "**/.gitignore": true,
-    "**/build": true,
-    "**/node_modules": true
-  },
-  "files.associations": {
-    "*.ts": "typescript",
-    "*.tsx": "typescriptreact",
-    "*.js": "javascript"
-  },
-  "[dart]": {
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+    "editor.guides.bracketPairs": true,
+    "telemetry.telemetryLevel": "off",
+    "security.workspace.trust.startupPrompt": "always",
+    "editor.accessibilitySupport": "off",
+    "liveServer.settings.CustomBrowser": "chromium",
+    "editor.fontFamily": "'Consolas', 'Consolas Italic', 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "tabnine.experimentalAutoImports": true,
+    "window.commandCenter": true,
+    "window.titleBarStyle": "custom",
+    "workbench.editor.enablePreview": false,
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    //following will be in italic (=FlottFlott)
+                    "comment",
+                    "entity.name.type.class", //class names
+                    "keyword", //import, export, return…
+                    "constant", //String, Number, Boolean…, this, super
+                    "storage.modifier", //static keyword
+                    "storage.type.class.js", //class keyword
+                    "variable",
+                    "string",
+                    "array",
+                    "int",
+                    "number",
+                    "enum",
+                    "accessSpecifiers",
+                    "object",
+                    "name",
+                    "scope",
+                    "keyword.operator",
+                    "constant.numeric.css",
+                    "keyword.other.unit.px.css",
+                    "constant.numeric.decimal.js",
+                    "constant.numeric.json"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": [
+                    //following will be excluded from italics (VSCode has some defaults for italics)
+                    "invalid"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "gitlens.advanced.messages": {
+        "suppressGitDisabledWarning": true,
+        "suppressGitMissingWarning": true
+    },
+    "editor.detectIndentation": false,
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "editor.tabSize": 2,
+    "php-cs-fixer.lastDownload": 1677415889161,
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "files.exclude": {
+        "**/.gitignore": true,
+        "**/build": true,
+        "**/node_modules": true
+    },
+    "files.associations": {
+        "*.ts": "typescript",
+        "*.tsx": "typescriptreact",
+        "*.js": "javascript"
+    },
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [80],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "window.zoomLevel": 0,
     "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [
-      80
-    ],
-    "editor.selectionHighlight": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
-  },
-  "window.zoomLevel": 0,
-  "editor.formatOnSave": true,
-  "workbench.colorTheme": "One Dark Vivid",
-  "oneDark.bold": true,
-  "workbench.preferredDarkColorTheme": "One Dark Vivid",
-  "oneDark.italic": false,
-  "editor.fontSize": 15,
-  "editor.lineHeight": 1.9,
-  "editor.suggestFontSize": 14,
-  "search.useGlobalIgnoreFiles": true,
-  "dart.previewFlutterUiGuides": true,
-  "dart.previewFlutterUiGuidesCustomTracking": true,
-  "files.autoSave": "afterDelay"
+    "workbench.colorTheme": "One Dark Vivid",
+    "oneDark.bold": true,
+    "workbench.preferredDarkColorTheme": "One Dark Vivid",
+    "oneDark.italic": false,
+    "editor.fontSize": 15,
+    "editor.lineHeight": 1.9,
+    "editor.suggestFontSize": 14,
+    "search.useGlobalIgnoreFiles": true,
+    "dart.previewFlutterUiGuides": true,
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "files.autoSave": "afterDelay",
+    "intelephense.diagnostics.undefinedClassConstants": false,
+    "intelephense.diagnostics.undefinedTypes": false,
+    "intelephense.diagnostics.undefinedFunctions": false,
+    "intelephense.diagnostics.undefinedConstants": false,
+    "intelephense.diagnostics.undefinedMethods": false,
+    "intelephense.diagnostics.undefinedProperties": false,
+    "intelephense.diagnostics.undefinedVariables": false,
+    "vscode-bard.cookies": "_ga=GA1.1.659895425.1691495898; __Secure-ENID=14.SE=q8PWAnpfD9a2_SHM3Qd-CDxbT4wvosSm_j3AP3RlBF2-enXBTfebqz4LIM4tSyHLi77Gt2RXv6VH-X9oQh9uv5oOUjuPVlEnsEuLd-o0YVKaNMCHQPfL3lNLaJ8bULaXW0_jNNzVeFHeZBCels243zBw531ZmSTMCVLyjINssgrGGHjHQDNO0Mi6y40Noq0cM0vwzGAIGNA0SQSG_mprDSjTyvyyiUK_czB4uvL03nwdLi1sRdEFHPzW31_aDtQXOhgjj4LueqTdpcxs7Yet46DO5drMc1fn8XL6MQL0DQ; OGPC=19031986-1:19022552-1:; SID=bAjXDIP_bd0jwYpSK450fmrkOyqu_ETtFCs7VJkOE4O_XG2nesiFlwaltnxdgc7R-vgzfQ.; __Secure-1PSID=bAjXDIP_bd0jwYpSK450fmrkOyqu_ETtFCs7VJkOE4O_XG2nCuKqDplnByS_hb7MbaWcXw.; __Secure-3PSID=bAjXDIP_bd0jwYpSK450fmrkOyqu_ETtFCs7VJkOE4O_XG2nu3VkiWZUpDtmjowM4i3rPg.; HSID=A0jp2sLgdO8EqFGR1; SSID=ABknZzfDeP11BSYq-; APISID=2TGFOxTCQ6DscKnJ/AI4G2TMM6rbZrkaxS; SAPISID=FP5hQC0Z_SCmtAIV/AmKePnL2yDRUKhBPK; __Secure-1PAPISID=FP5hQC0Z_SCmtAIV/AmKePnL2yDRUKhBPK; __Secure-3PAPISID=FP5hQC0Z_SCmtAIV/AmKePnL2yDRUKhBPK; SL_G_WPT_TO=en; SL_GWPT_Show_Hide_tmp=1; SL_wptGlobTipTmp=1; AEC=Ad49MVEzWtGCMXlPVDRPsVyidBwwrbK6qONlvcgw4ShEqu2AgA3P4lpz6w; 1P_JAR=2023-09-19-16; SEARCH_SAMESITE=CgQIo5kB; NID=511=bbR6cH9DBBvN8ocAbhLFDYXxnBH5wS_bIHjY9oLlA5odeyq4OZQkl0yUNsPaL2adPCifBBQGYNXhXPsGBciX7mHJS6e57EZGsRcDuTMZhPYZ_dL9cttDFGskJavfMdFECrNvMq7rBOjpFqselhEgZ-PEUhBaBRtVscBk_KojrYiTgjUbeSjvxUHY73YCB6Kd9d2CR9t2pIjuu8i_GiNgiXxXUAlGrT56hT-S1kDMcTp6-Z6O-Jt6Kbzmqhw-nBbKhJSxjVNwlfBzkWDq6FHH2ZFTxeSR7qk6W3WJYhFq0uKKTRE24DJznI4rBWoaowzwaV7DmvC_SUOQjTFp6eNYEbkSz_JDp7Z7WDRd4pgAof9ApGXCfZA4vnNJ8xkwKtiotaqt2pyreRmxsJT8ga-J1N69TNgbXEOIjOfm4THkTmG5D8fYOxaa-QW7JsD8LPlz58d8laaRHQkHOCVrR2OCvvJ8xWdaiLAHBDnLeICeEcdyyKVhVz6mUoGFzoUuyPTHfDcrYGZ2EiRyUehdy-F6ecoEXXsSCqfVBigTt0aZQgEiTh88G4DqOHswRvZs8u5u89vBx8t0p0jZESFO3h9fw7M7X44M3dbreUiM9egMXhV_n3M3kdvj32f9bQK6VWvU93dAnIdwF47ySVWmb3uHHoVEaCKUs_6jRW-awWvSCDyg0kYwANRgxsDTJ14MHc9GLXnuc83HDYH6Lu5Y; __Secure-1PSIDTS=sidts-CjEB3e41hYztrC4IuukXj7isHXWCdy1fdYMe7Wo-gYi-hVULEPl1nCN9RFdIoxwMAPZZEAA; __Secure-3PSIDTS=sidts-CjEB3e41hYztrC4IuukXj7isHXWCdy1fdYMe7Wo-gYi-hVULEPl1nCN9RFdIoxwMAPZZEAA; _ga_WC57KJ50ZZ=GS1.1.1695139445.137.1.1695142644.0.0.0; UULE=a+cm9sZTogMQpwcm9kdWNlcjogMTIKdGltZXN0YW1wOiAxNjk1MTQyNjQ0ODk0MDAwCmxhdGxuZyB7CiAgbGF0aXR1ZGVfZTc6IDMwMTM0MTY4OQogIGxvbmdpdHVkZV9lNzogMzEzNjU1ODc3Cn0KcmFkaXVzOiAxNTczNTYwLjQ2NTUyNjM1OTQKcHJvdmVuYW5jZTogNgo=; SIDCC=APoG2W90BW2JJsT9UlJXpe-jngYgZMrPDnBSZgXRqAJh82hK9I07oMVV7a9tVU7XJBSdVgWSjZj_; __Secure-1PSIDCC=APoG2W-Bolj5yzAPqXWeQyRiNzfJRAZo8q3-u1Xc4c4mOq0CGqC-QlLPtdRj4oOc4A89iFXKOd8; __Secure-3PSIDCC=APoG2W9OVQkmmB5TBPS7enR7ab__ERZJ3hmLIF8sidFHIR6IGtHJ9OmDKDD-ThTkaMJmWoB_wR0m"
 }

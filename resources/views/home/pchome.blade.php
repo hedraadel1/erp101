@@ -3,13 +3,7 @@
 
 @section('css')
     <style>
-        /* .button_top {
-                                                    opacity: 0;
-                                                }
 
-                                                table:hover .button_top {
-                                                    opacity: 1;
-                                                } */
     </style>
 @endsection
 
@@ -19,7 +13,7 @@
     @endphp
     <!-- Content Header (Page header) -->
     <section style="margin-top: 130px">
-        {{--  <h1>{{ __('home.welcome_message', ['name' => Session::get('user.first_name')]) }}
+        {{-- <h1>{{ __('home.welcome_message', ['name' => Session::get('user.first_name')]) }}
     </h1> --}}
     </section>
     <!-- Main content -->
@@ -27,7 +21,6 @@
         <br>
         @if (auth()->user()->can('dashboard.data'))
             @if ($is_admin)
-
                 <div style="height: 53px;margin-top: 10px;" class=" button-header-40">
                     <div class="col-md-4 col-xs-12">
                         @if (count($all_locations) > 1)
@@ -52,6 +45,201 @@
                     </div>
                 </div>
                 <br>
+                <div style="height: 53px;margin-top: 10px;" class=" button-header-40">
+                    <div class="col-md-4 col-xs-12">
+
+                    </div>
+                    <div class="col-md-8 col-xs-12">
+                        <div class="form-group pull-right">
+                            <div class="input-group">
+                                <button type="button" class="btn btn-primary" id="">
+                                    <span>
+                                        <i class="fa fa-calendar"></i> {{ __('messages.filter_by_date') }}
+                                    </span>
+                                    <i class="fa-eye-slash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div style="    background: #424141;margin-bottom: 8px;
+                padding: 2px;border-radius: 7px;"
+                    class="ag-format-container">
+                    <div style="border-radius: 4px;background: white;
+                    padding: 5px" class="">
+                        <div class="ag-courses_item" style=" flex-basis: calc(25% - 30px);">
+                            @if (!empty($wallet))
+                                <div class="col-md-4">
+                                    <div style="border:solid;border-radius: 20px;" class="">
+                                        <div style="background: black;color:#fff !important;border-top-right-radius: 17px;
+                                    border-top-left-radius: 17px;"
+                                            class="box-header text-center">
+                                            <h2 style="color:#fff !important" class="box-title">
+                                                رصيد المحفظة
+                                            </h2>
+                                        </div>
+                                        <div class="box-header text-center">
+
+
+                                            <div  class="box-body text-center">
+                                                @format_currency($wallet->amount)
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            @endif
+                            @if (!empty($wallet))
+                                <div class="col-md-4">
+                                    <div style="border:solid;border-radius: 20px;" class="">
+                                        <div style="background: black;color:#fff !important;border-top-right-radius: 17px;
+                                    border-top-left-radius: 17px;"
+                                            class="box-header text-center">
+                                            <h2 style="color:#fff !important" class="box-title">
+                                                كاش باك - رصيد مجاني
+                                            </h2>
+                                        </div>
+                                        <div class="box-header  text-center">
+
+
+                                            <div class="box-body text-center">
+                                                @format_currency($wallet->free_money)
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            @endif
+                            <div class="col-md-4">
+                                <div style="border:solid;border-radius: 20px;" class="">
+                                    <div style="background: black;color:#fff !important;border-top-right-radius: 17px;
+                                border-top-left-radius: 17px;"
+                                        class="box-header text-center">
+                                        <h2 style="color:#fff !important" class="box-title">
+                                            لخدمات الدعم الفني
+                                        </h2>
+                                    </div>
+                                    <div class="box-header  text-center">
+
+
+                                        <div  class="box-body text-center">
+                                            <button style="background-color: #202647;border-color: #0e1538bf;height: 45px;"
+                                                class="btn Btn-Brand Btn-bx  btn-block">
+                                                اضغط هنا
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div style="margin-top:10px" class="col-bg-12">
+                                <div style="border:solid;border-radius: 20px;" class="">
+                                    <div style="background: black;color:#fff !important;border-top-right-radius: 17px;
+                                border-top-left-radius: 17px;"
+                                        class="box-header text-center">
+                                        <h2 style="color:#fff !important" class="box-title">
+                                            كاش باك - رصيد مجاني
+                                        </h2>
+                                    </div>
+                                    <div class="box-header  text-center">
+
+
+                                        <div class="box-body text-center">
+                                            <div class="box-body">
+                                                @foreach ($serverTypes as $serverType)
+                                                    <div class="col-md-4">
+                                
+                                                        <div style="height: 350px;width: unset;" class="buttonBlue {{-- hvr-grow-shadow --}}">
+                                                            <div style="background: #000;color:white" class="box-header with-border text-center">
+                                                                <h2 style="color:white" class="box-title">x{{ $serverType->server_name }}</h2>
+                                
+                                                            </div>
+                                                            <!-- /.box-header -->
+                                                            <div style="padding: unset;" class="box-body text-center">
+                                                                @lang('superadmin::lang.ServerSpeedRate')
+                                
+                                                                <div style="color: white">
+                                                                    {{ $serverType->server_speed }}
+                                                                </div>
+                                                               
+                                                                @lang('superadmin::lang.server_cpu')
+                                                                <div style="color: white">
+                                                                    {{ $serverType->server_cpu }}
+                                                                </div>
+                                                             
+                                                                @lang('superadmin::lang.server_ram')
+                                                                <div style="color: white">
+                                                                    {{ $serverType->server_ram }}
+                                                                </div>
+                                                             
+                                                                @lang('superadmin::lang.server_network')
+                                                                <div style="color: white">
+                                                                    {{ $serverType->server_network }}
+                                                                </div>
+                                                             
+                                                                @lang('superadmin::lang.server_pr_limit')
+                                                                <div style="color: white">
+                                                                    {{ $serverType->server_pr_limit }}
+                                                                </div>
+                                                             
+                                                                @lang('superadmin::lang.server_response_time_range')
+                                                                <div style="color: white">
+                                                                    {{ $serverType->server_response_time_range }} <small>
+                                                                        / @lang('superadmin::lang.PerSecond')
+                                                                    </small>
+                                                                </div>
+                                                                <br />
+                                
+                                
+                                
+                                                                <h3 style="background: #000;color:white" class="box-header with-border text-center">
+
+                                                                    @if ($serverType->server_price_perday != 0)
+                                                                        <span class="display_currency" data-currency_symbol="true">
+                                                                            {{ $serverType->server_price_perday }}
+                                                                        </span>
+                                
+                                                                        <small>
+                                                                            / @lang('superadmin::lang.perday')
+                                                                        </small>
+                                                                    @else
+                                                                        / @lang('superadmin::lang.forfree')
+                                                                    @endif
+                                                                </h3>
+                                
+                                                            </div>
+                                                            <!-- /.box-body -->
+                                
+                                                         
+                                                        </div>
+                                                        <!-- /.box -->
+                                                    </div>
+                                                    @if ($loop->iteration % 3 == 0)
+                                                        <div class="clearfix"></div>
+                                                    @endif
+                                                @endforeach
+                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
                 @component('components.widget', [
                     'class' => 'box-primary',
                     'display' => 'contents',
@@ -866,9 +1054,9 @@
     @endif
     <script type="text/javascript">
         /*
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    task-4
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    submit update of installment Date
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            task-4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            submit update of installment Date
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */
         $('#installment_pay').on('submit', function() {
 
             $.ajaxSetup({
@@ -1629,8 +1817,8 @@
             $(document).on(
                 'change',
                 '#purchase_list_filter_location_id, \
-                                                                                                                                                                                #purchase_list_filter_supplier_id, #purchase_list_filter_payment_status,\
-                                                                                                                                                                                  #purchase_list_filter_status',
+                                                                                                                                                                                        #purchase_list_filter_supplier_id, #purchase_list_filter_payment_status,\
+                                                                                                                                                                                          #purchase_list_filter_status',
                 function() {
                     purchase_table_home.ajax.reload();
                 }

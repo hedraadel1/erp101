@@ -10,12 +10,12 @@ class SuperadminBusinessProduct extends Model
 
   protected $table = "superadmin_business_products";
 
-    protected $guarded = ['id'];
+  protected $guarded = ['id'];
 
 
 
-    public function product(){
-      return $this->belongsTo(SuperadminProduct::class ,'product_id' , 'id' );
-    }
-  
+  public function product()
+  {
+    return $this->belongsTo(SuperadminProduct::class, 'product_id', 'id');
+  }
 }
