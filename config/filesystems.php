@@ -46,6 +46,7 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => public_path('uploads'),
+            'cache_time' => 7 * 24 * 60 * 60,
         ],
 
         'public' => [
@@ -53,6 +54,7 @@ return [
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
+            'cache_time' => 7 * 24 * 60 * 60,
         ],
 
         's3' => [
@@ -61,6 +63,7 @@ return [
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
+            'cache_time' => 7 * 24 * 60 * 60,
         ],
 
         'dropbox' => [

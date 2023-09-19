@@ -6,10 +6,6 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>@lang('superadmin::lang.packages') <small>@lang('superadmin::lang.all_packages')</small></h1>
-        <!-- <ol class="breadcrumb">
-                                                <a href="#"><i class="fa fa-dashboard"></i> Level</a><br/>
-                                                <li class="active">Here<br/>
-                                            </ol> -->
     </section>
 
     <!-- Main content -->

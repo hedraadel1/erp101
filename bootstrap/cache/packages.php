@@ -60,6 +60,13 @@
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
+  'filippo-toso/laravel-supervisor' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'FilippoToso\\LaravelSupervisor\\SupervisorServiceProvider',
+    ),
+  ),
   'knox/pesapal' => 
   array (
     'providers' => 
@@ -69,6 +76,17 @@
     'aliases' => 
     array (
       'Pesapal' => 'Knox\\Pesapal\\Facades\\Pesapal',
+    ),
+  ),
+  'ladumor/laravel-pwa' => 
+  array (
+    'providers' => 
+    array (
+      0 => '\\Ladumor\\LaravelPwa\\PWAServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'LaravelPwa' => 'Ladumor\\LaravelPwa\\LaravelPwa',
     ),
   ),
   'laravel/passport' => 

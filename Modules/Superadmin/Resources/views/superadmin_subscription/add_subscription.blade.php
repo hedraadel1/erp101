@@ -6,7 +6,7 @@
     {!! Form::hidden('business_id', $business_id); !!}
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title">@lang( 'superadmin::lang.add_subscription' )</h4>
+      <h4 class="modal-title">@lang( 'superadmin::lang.add_subscription_server' )</h4>
     </div>
 
     <div class="modal-body">

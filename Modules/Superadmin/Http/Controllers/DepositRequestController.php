@@ -61,7 +61,7 @@ class DepositRequestController extends BaseController
   public function getAllDepositRequests()
   {
     if (request()->ajax()) {
-      $deposit_requests = DepositRequest::where('business_id', session('business.id'))->latest()->get();
+      $deposit_requests = DepositRequest::where('business_id', session('business.id'))->get();
         return DataTables::of($deposit_requests)
                 ->addColumn(
                   'action',
@@ -101,6 +101,7 @@ class DepositRequestController extends BaseController
                 })
                 
                 ->rawColumns(['action','status' ,'image'])
+              
                 ->make(true);
       }
       $payments = DepositRequest::$PAYMENT;

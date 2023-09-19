@@ -9,9 +9,9 @@
             <small>@lang('superadmin::lang.manage_business')</small>
         </h1>
         <!-- <ol class="breadcrumb">
-                                                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                                                <li class="active">Here</li>
-                                            </ol> -->
+                                                            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                                                            <li class="active">Here</li>
+                                                        </ol> -->
     </section>
 
     <!-- Main content -->
@@ -91,6 +91,8 @@
                         <table class="table table-bordered table-striped" id="superadmin_business_table">
                             <thead>
                                 <tr>
+                                    <th>@lang('superadmin::lang.action')</th>
+                                    <th>@lang('superadmin::lang.action')</th>
                                     <th>@lang('business.id')</th>
                                     <th>
                                         @lang('business.registered_on')
@@ -105,7 +107,6 @@
                                     <th>@lang('lang_v1.isold_statues')</th>
                                     <th>@lang('business.current_subscription')</th>
 
-                                    <th>@lang('superadmin::lang.action')</th>
                                 </tr>
                             </thead>
                         </table>
@@ -139,7 +140,21 @@
                 aaSorting: [
                     [0, 'desc']
                 ],
+
                 columns: [{
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable: false
+                    },
+
+                    {
+                        data: 'actions',
+                        name: 'actions',
+                        orderable: false,
+                        searchable: false
+                    },
+                    {
                         data: 'id',
                         name: 'business.id'
                     },
@@ -168,6 +183,7 @@
                     {
                         data: 'owner_email',
                         name: 'u.email'
+
                     },
 
                     {
@@ -179,6 +195,7 @@
                         data: 'is_active',
                         name: 'is_active',
                         searchable: false
+
                     },
                     {
                         data: 'is_old',
@@ -190,15 +207,17 @@
                         name: 'p.name'
                     },
 
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    },
+
                 ]
             });
 
+            let column3 = superadmin_business_table.column(3); 
+            let column5 = superadmin_business_table.column(5); 
+            let column8 = superadmin_business_table.column(8); 
+            column3.visible(false);
+            column5.visible(false); 
+            column8.visible(false); 
+            
             $('#package_id, #subscription_status, #is_active, #last_transaction_date, #no_transaction_since')
                 .change(function() {
                     superadmin_business_table.ajax.reload();

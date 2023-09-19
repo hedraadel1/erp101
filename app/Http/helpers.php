@@ -275,7 +275,7 @@ if (! function_exists('enable_view_brand_store')) {
       $setting =  System::where('key', 'enable_view_brand_store')->first();
       $output = false;
       if ($setting) {
-        if ($setting->value == 1) {
+        if ($setting->value == 0) {
           $output = true;
         }
       } 

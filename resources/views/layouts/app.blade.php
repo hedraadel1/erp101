@@ -22,17 +22,21 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <script src="{{ asset('js/vendor/modernizr-2.6.2.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/menumodal.css') }}">
-
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>@yield('title') - {{ Session::get('business.name') }}</title>
+
+
+    <!-- PWA  -->
+    <meta name="theme-color" content="#6777ef" />
+    <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+
 
     @include('layouts.partials.css')
 
@@ -61,33 +65,6 @@
                 line-height: auto;
                 width: auto !important;
             }
-
-            /* div.row.margin-bottom-20.text-center>div.col-sm-7 {
-                position: relative !important;
-                top: -35px !important;
-            }
-
-            div.row.margin-bottom-20.text-center>div.col-sm-3 {
-                position: relative !important;
-                top: -40px !important;
-            }
-
-            div.row.margin-bottom-20.text-center>div.col-sm-2 {
-                position: relative !important;
-                top: 110px !important;
-            }
-
-            .dataTables_wrapper .buttons-collection,
-            .dataTables_wrapper .buttons-print,
-            .dataTables_wrapper .buttons-excel,
-            .dataTables_wrapper .buttons-csv {
-                border: none !important;
-                color: #ffffff;
-                font-weight: 700;
-                margin: 5px 0px !important;
-                width: 40% !important;
-
-            } */
         </style>
     @else
         <style>
@@ -96,11 +73,6 @@
             }
         </style>
     @endif
-    <style>
-       
-    </style>
-    <link rel="stylesheet" href="{{ asset('css/mystyle_theme1.css') }}">
-
     <style>
         .context-menu {
             list-style: none;
@@ -232,6 +204,47 @@
         .width-120 {
             width: 120px !important;
         }
+
+        /* Styling for the fullscreen dialog */
+        #fullscreenDialog {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+            z-index: 9999;
+        }
+
+        #fullscreenDialog p {
+            margin-bottom: 20px;
+        }
+
+        #fullscreenDialog button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 10px;
+            width: 120px;
+            cursor: pointer;
+        }
+
+        #fullscreenDialog button.no {
+            background-color: #e74c3c;
+            border-radius: 10px;
+            width: 120px;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ asset('css/mystyle_theme1.css') }}">
+
+    <style>
+
     </style>
     <script>
         var IS_RTL =
@@ -242,6 +255,15 @@
 
 <body
     class="@if ($pos_layout) hold-transition lockscreen @else hold-transition skin-@if (!empty(session('business.theme_color'))){{ session('business.theme_color') }}@else{{ 'blue-light' }} @endif sidebar-mini @endif">
+    <div id="fullscreenDialog">
+        <p style="color: #3498db;">هل تريد ملئ الشاشة كلها ؟</p>
+        <button id="fullscreenButton" class="yes">نعم</button>
+        <button id="fullscreenNoButton" class="no">لا</button>
+        <p></p>
+        <p style="font-size: 12px;font-weight: bold;color: red;">قم بالضغط على على F11 للدخول والخروج من وضع ملئ الشاشة
+            فى اى مكان
+        </p>
+    </div>
 
     @if (!isMobile() && session('business.enable_view_short_menu') == 1)
         <label style="bottom: 60%;cursor:pointer" href="#" for="dialog_state" class="floatapp">
@@ -327,17 +349,7 @@
                         href="{{ action('ContactController@index', ['type' => 'supplier']) }}">@lang('lang_v1.RightClick_ManageSupplier')</a>
                 </li>
             @endcan
-            {{-- <li class="link"><a href="#">--------------------------------</a></li>
 
-				<li>
-					<a class="fa fa-facebook" href="#">xxxx</a>
-				</li>
-				<li>
-					<a class="fa fa-facebook" href="#">xxxx</a>
-				</li>
-				<li>
-					<a class="fa fa-facebook" href="#">xxxx</a>
-				</li> --}}
 
 
             <li class="link"><a href="#">--------------------------------</a></li>
@@ -352,10 +364,9 @@
             <li class="download"><a class="button-header-40 rihhtbut"
                     href="{{ action('UserController@getProfile') }}">@lang('lang_v1.RightClick_ManageProfile')</a></li>
             <li class="trash"><a class="button-header-40 rihhtbut"
-                    href="{{ action('Auth\LoginController@logout') }}">@lang('lang_v1.RightClick_Logout')</a></li>
-
-
-
+                    href="{{ action('Auth\LoginController@logout') }}">@lang('lang_v1.RightClick_Logout')
+                </a>
+            </li>
         </ul>
     </div>
     @include('layouts.mainmenumodal')
@@ -428,9 +439,9 @@
             <button type="button" id="open_div_content" class=" " style="display: none" data-toggle="modal"
                 data-target="#content_model">
             </button>
-            <button type="button" id="open_div_brand_store" class=" " style="display: none"
+            <!--<button type="button" id="open_div_brand_store" class=" " style="display: none"
                 data-toggle="modal" data-target="#brand_store_modal">
-            </button>
+            </button>*/ -->
 
             <!-- Modal -->
             @if ($package)
@@ -538,8 +549,6 @@
             @include('layouts.partials.docker')
         @endif
 
-        {{-- @else
-                @include('layouts.partials.footer_pos') --}}
     @endif
 
 
@@ -742,7 +751,7 @@
 
 
     @include('layouts.partials.ifram_brand_store')
-    <div class="modal  fade" id="content_model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    {{--  <div class="modal  fade" id="content_model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -775,7 +784,51 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </body>
+{{-- <script src="{{ asset('../public/sw.js') }}"></script>
+<script>
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("../public/sw.js").then(function(reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
+</script> --}}
+
+
+<script>
+    // Automatically open the fullscreen dialog on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        const fullscreenDialog = document.getElementById('fullscreenDialog');
+        fullscreenDialog.style.display = 'block';
+    });
+
+    // Handle the "Yes" button click to enter fullscreen
+    document.getElementById('fullscreenButton').addEventListener('click', () => {
+        const fullscreenDialog = document.getElementById('fullscreenDialog');
+        fullscreenDialog.style.display = 'none';
+
+        // Enter fullscreen mode (this won't be the browser's native fullscreen)
+        document.documentElement.requestFullscreen();
+    });
+
+    // Handle the "No" button click to close the dialog
+    document.getElementById('fullscreenNoButton').addEventListener('click', () => {
+        const fullscreenDialog = document.getElementById('fullscreenDialog');
+        fullscreenDialog.style.display = 'none';
+    });
+    // Handle keyboard shortcuts
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            // Pressing "Esc" key selects "No"
+            const fullscreenDialog = document.getElementById('fullscreenDialog');
+            fullscreenDialog.style.display = 'none';
+        } else if (event.key.toLowerCase() === 'y') {
+            // Pressing "Y" key selects "Yes"
+            const fullscreenButton = document.getElementById('fullscreenButton');
+            fullscreenButton.click();
+        }
+    });
+</script>
 
 </html>

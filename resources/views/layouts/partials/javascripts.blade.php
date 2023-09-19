@@ -349,26 +349,6 @@
     $('#close_global_search').on('click', function() {
         $('#search_list').addClass('hide');
     });
-
-
-    $(document).ready(function() {
-        $(window).on('load', function() {
-            /***
-             * send auto messages to busienss
-             * */
-            // setInterval(() => {
-            $.ajax({
-                type: 'GET',
-                url: "{{ action('\Modules\Superadmin\Http\Controllers\WhatsappNotificationController@checkWhatsappMessage') }}",
-                dataType: 'json',
-                success: function(result) {},
-                error: function(result) {
-                    toastr.error(result.error);
-                }
-            });
-            // }, 120000);
-        });
-    });
 </script>
 
 <script>

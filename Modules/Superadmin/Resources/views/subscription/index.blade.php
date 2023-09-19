@@ -8,9 +8,93 @@
 
         @include('superadmin::layouts.partials.currency')
 
+        @component('components.widget', ['title' => 'مـحـفـظـة بـرانـد'])
+
+            @if (!empty($wallet))
+                <div class="col-md-6">
+                    <div class="box box-success">
+                        <div style="background: black;color:#fff !important" class="box-header text-center">
+                            <h2 style="color:#fff !important" class="box-title">
+                                رصيد المحفظة
+                            </h2>
+                        </div>
+                        <div class="box-header with-border text-center">
+
+
+                            <div class="box-body text-center">
+                                @format_currency($wallet->amount)
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            @endif
+            @if (!empty($wallet))
+                <div class="col-md-6">
+                    <div class="box box-success">
+                        <div style="background: black;color:#fff !important" class="box-header text-center">
+                            <h2 style="color:#fff !important" class="box-title">
+                                كاش باك - رصيد مجاني
+                            </h2>
+                        </div>
+                        <div class="box-header with-border text-center">
+
+
+                            <div class="box-body text-center">
+                                @format_currency($wallet->free_money)
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            @endif
+            @if (!empty($nexts))
+                <div class="clearfix"></div>
+                @foreach ($nexts as $next)
+                    <div class="col-md-4">
+                        <div class="box box-success">
+                            <div class="box-header with-border text-center">
+                                <h2 class="box-title">
+                                    {{ $next->package_details['name'] }}
+                                </h2>
+                            </div>
+                            <div class="box-body text-center">
+                                @lang('superadmin::lang.start_date') : {{ @format_date($next->start_date) }} <br />
+                                @lang('superadmin::lang.end_date') : {{ @format_date($next->end_date) }}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+
+            @if (!empty($waiting))
+                <div class="clearfix"></div>
+                @foreach ($waiting as $row)
+                    <div class="col-md-12">
+                        <div class="box box-success">
+                            <div class="box-header with-border text-center">
+                                <h2 class="box-title">
+                                    {{ $row->package_details['name'] }}
+                                </h2>
+                            </div>
+                            <div class="box-body text-center">
+                                @if ($row->paid_via == 'offline')
+                                    @lang('superadmin::lang.waiting_approval')
+                                @else
+                                    @lang('superadmin::lang.waiting_approval_gateway')
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+        @endcomponent
+
         @component('components.widget', ['title' => __('superadmin::lang.active_subscription')])
             @if (!empty($active))
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <div class="box box-success">
                         <div class="box-header with-border text-center">
                             <h2 class="box-title">
@@ -35,64 +119,6 @@
                 </div>
             @else
                 <h3 class="text-danger">@lang('superadmin::lang.no_active_subscription')</h3>
-            @endif
-            @if (!empty($wallet))
-                <div class="col-md-4">
-                    <div class="box box-success">
-                        <div class="box-header with-border text-center">
-                            <h2 class="box-title">
-                                {{ __('business.wallet_money') }}
-                            </h2>
-
-                            <div class="box-body text-center">
-                                @format_currency($wallet->amount)
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            @endif
-
-            @if (!empty($nexts))
-                <div class="clearfix"></div>
-                @foreach ($nexts as $next)
-                    <div class="col-md-4">
-                        <div class="box box-success">
-                            <div class="box-header with-border text-center">
-                                <h2 class="box-title">
-                                    {{ $next->package_details['name'] }}
-                                </h2>
-                            </div>
-                            <div class="box-body text-center">
-                                @lang('superadmin::lang.start_date') : {{ @format_date($next->start_date) }} <br />
-                                @lang('superadmin::lang.end_date') : {{ @format_date($next->end_date) }}
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            @endif
-
-            @if (!empty($waiting))
-                <div class="clearfix"></div>
-                @foreach ($waiting as $row)
-                    <div class="col-md-4">
-                        <div class="box box-success">
-                            <div class="box-header with-border text-center">
-                                <h2 class="box-title">
-                                    {{ $row->package_details['name'] }}
-                                </h2>
-                            </div>
-                            <div class="box-body text-center">
-                                @if ($row->paid_via == 'offline')
-                                    @lang('superadmin::lang.waiting_approval')
-                                @else
-                                    @lang('superadmin::lang.waiting_approval_gateway')
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
             @endif
         @endcomponent
         {{-- <div class="box">

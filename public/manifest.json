@@ -1,0 +1,17 @@
+{
+    "name": "Onoo Brand",
+    "short_name": "OBE",
+    "start_url": "../public/index.html",
+    "background_color": "#fff",
+    "description": "Brand Erp System",
+    "display": "fullscreen",
+    "theme_color": "#f5365c",
+    "icons": [
+        {
+            "src": "logo.PNG",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "Brand ERP Pur"
+        }
+    ]
+}
